@@ -12,6 +12,7 @@ namespace ExamenU3
         }
 
         public DbSet<Product> ? Products {get; set;}
+        public DbSet<Pedido> Pedidos { get; set; }
 
         protected void onModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +24,23 @@ namespace ExamenU3
                     Descripcion = "Test",
                     Precio = "100",
                     Cantidad = 2
+                }
+            );
+        }
+
+        public DbSet<Client> ? Clients {get; set;}
+
+        protected void onModelCreatingClient(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Client>().HasData(
+                new Client()
+                {
+                    Id = 1,
+                    Nombre = "Test",
+                    Apellidos = "Test",
+                    RFC = "100",
+                    CorreoElectronico = "20203tn132@utez.edu.mx",
+                    Telefono ="7771367133"
                 }
             );
         }
