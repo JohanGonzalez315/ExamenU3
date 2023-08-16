@@ -13,8 +13,9 @@ namespace ExamenU3
 
         public DbSet<Product> ? Products {get; set;}
         public DbSet<Pedido> Pedidos { get; set; }
-
-        protected void onModelCreating(ModelBuilder modelBuilder)
+        
+        public DbSet<Category> ? Categories {get; set;}
+            protected void onModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>().HasData(
                 new Product()
