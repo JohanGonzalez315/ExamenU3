@@ -48,16 +48,6 @@ namespace ExamenU3.Controllers
             return Ok();
         }
 
-        [HttpGet("Show")]
-        public async Task<IActionResult> Show(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            return Ok(product);
-        }
 
         [HttpPut("Update")]
         public async Task<IActionResult> Update(int id, [FromBody] Product product)
